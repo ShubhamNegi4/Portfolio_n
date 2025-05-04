@@ -139,27 +139,27 @@ const navLinks = [
   
   const expCards = [
   {
-    review: "Achieved Highest Rating of 1766 (Expert) on Codeforces",
+    review: "Achieved Highest Rating of 1602 (Expert) on Codeforces",
     title: "Programming Language:",
     responsibilities: ["C, C++, Java, JavaScript, php, Python"],
   },
   {
-    review: "Global Rank 156 in Codeforces Round 875 (Div. 2)",
+    review: "Meta HackerCup 2024: Secured Rank 1180/28K in Round 1.",
     title: "Frameworks/ Libraries:",
     responsibilities: ["Springboot, Django, React.js, Next.js, Node.js, Express.js, EJS, Three-js, GSAP"],
   },
   {
-    review: "Global Rank 527 in Codeforces Round 865 (Div. 2)",
+    review: "TCS CodeVita 2024: Achieved AIR 540 among 19K of participants",
     title: "Database:",
     responsibilities: ["MySQL, MongoDB"],
   },
   {
-    review: "Achieved Highest Rating of 2029 (5 Star) on CodeChef",
+    review: "Achieved Highest Rating of 1920 (4 Star) on CodeChef",
     title : "DevOps:",
     responsibilities: ["Docker, AWS"],
   },
   {
-    review: "Global Rank 617 (India Rank 411) in Google Kickstart Round G 2022",
+    review: "Lead team for Smart India Hackathon where we worked on Traffic Ai Surviellance.",
     title : "Developer Tools:",
     responsibilities:["Github,VS Code, Postman ,MongoDB Atlas,Firebase,Eclipse,Jupyter Notebook."],
   },
