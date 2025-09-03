@@ -30,10 +30,9 @@ const hero = () => {
             <img src="/images/bg.png" alt="background" />
         </div>
         <div className  = "hero-layout">
-            {
-                /*Left : Hero content*/
-            }
-            <header className= "flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+            <div className="glass-card glass-card-hover p-5 md:p-8 w-full flex flex-col xl:flex-row items-center gap-8">
+            {/* Left : Hero content */}
+            <header className= "flex flex-col justify-center w-full xl:w-1/2">
                 <div className = "flex flex-col gap-7">
                     <div className= "hero-text">
                         <h1>Transforming 
@@ -59,22 +58,21 @@ const hero = () => {
                         </h1>
                         <h1>into Functional Software</h1>
                     </div>
-                    <p className = "text-white-50 md:text-2xl relative z-10 pointer-events-none">
+                    <p className = "text-white-50 md:text-xl text-center relative z-10 pointer-events-none">
                     Hi, I’m Shubham Negi, a CS student passionate about backend systems,<br></br> algorithms, and intelligent models.
                     </p>
-                    <Buttons className = "md:w-80 md:h-16 w-60 h-12" id = "button" text = "See my work">
+                    <Buttons className = "md:w-80 md:h-16 mx-auto w-60 h-12" id = "button" text = "See my work">
 
                     </Buttons>
                 </div>
             </header>
-            {
-                /*Right: 3D model */
-            }
-            <figure>
-                <div className ="hero-3d-layout">
+            {/* Right: 3D model inside same card */}
+            <figure className="w-full xl:w-1/2">
+                <div className ="hero-3d-in-card">
                     <HeroExperience></HeroExperience>
                 </div>
             </figure>
+            </div>
         </div>
     </section>
   )

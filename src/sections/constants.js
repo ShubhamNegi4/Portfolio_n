@@ -6,6 +6,16 @@ const navLinks = [
     {
       name: "About",
       link: "#experience",
+    },
+    {
+      name: "Resume",
+      link: "https://drive.google.com/file/d/1mqE_HXnzP7Ye1l0SNbQIQKPOUooEuLV5/view?usp=sharing",
+      external: true,
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/shubham-negi-a6b70b248/",
+      external: true,
     }
   ];
   
@@ -138,32 +148,55 @@ const navLinks = [
   ];
   
   const expCards = [
-  {
-    review: "Achieved Highest Rating of 1602 (Expert) on Codeforces",
-    title: "Programming Language:",
-    responsibilities: ["C, C++, Java, JavaScript, php, Python"],
-  },
-  {
-    review: "Meta HackerCup 2024: Secured Rank 1180/28K in Round 1.",
-    title: "Frameworks/ Libraries:",
-    responsibilities: ["Springboot, Django, React.js, Next.js, Node.js, Express.js, EJS, Three-js, GSAP"],
-  },
-  {
-    review: "TCS CodeVita 2024: Achieved AIR 540 among 19K of participants",
-    title: "Database:",
-    responsibilities: ["MySQL, MongoDB"],
-  },
-  {
-    review: "Achieved Highest Rating of 1920 (4 Star) on CodeChef",
-    title : "DevOps:",
-    responsibilities: ["Docker, AWS"],
-  },
-  {
-    review: "Lead team for Smart India Hackathon where we worked on Traffic Ai Surviellance.",
-    title : "Developer Tools:",
-    responsibilities:["Github,VS Code, Postman ,MongoDB Atlas,Firebase,Eclipse,Jupyter Notebook."],
-  },
-]
+    {
+      review: "Meta Hacker Cup 2024: Secured AIR 1160 / 28K in Round 1",
+      title: "Meta Hacker Cup 2024",
+      responsibilities: ["Secured AIR 1160 / 28K in Round 1"],
+    },
+    {
+      review: "TCS CodeVita 2024: Achieved AIR 540 / 19K in round 1 and 1179/ 5K in round 2",
+      title: "TCS CodeVita 2024",
+      responsibilities: ["Achieved AIR 540 / 19K in round 1 and 1179/ 5K in round 2"],
+    },
+    {
+      review: "Amazon HackOn: Semifinalist. W Top 100/1800 teams",
+      title: "Amazon HackOn",
+      responsibilities: ["Semifinalist. W Top 100/1800 teams"],
+    },
+    {
+      review: "Codeforces - Expert: Max Rating - 1602, 900+ problems solved",
+      title: "Codeforces - Expert",
+      responsibilities: ["Max Rating - 1602, 900+ problems solved"],
+    },
+    {
+      review: "Achieved Highest Rating of 1920 (4 Star) on CodeChef",
+      title: "CodeChef - 4 Star",
+      responsibilities: ["Achieved Highest Rating of 1920 (4 Star)"],
+    },
+  ];
+
+  const techSkills = [
+    {
+      title: "Programming Languages:",
+      skills: ["C", "C++", "Golang","Java", "JavaScript", "PHP", "Python"],
+    },
+    {
+      title: "Frameworks / Libraries:",
+      skills: ["Springboot", "Django", "React.js", "Next.js", "Node.js", "Express.js", "EJS", "Three-js", "GSAP"],
+    },
+    {
+      title: "Database:",
+      skills: ["MySQL", "MongoDB"],
+    },
+    {
+      title: "DevOps:",
+      skills: ["Docker", "AWS"],
+    },
+    {
+      title: "Developer Tools:",
+      skills: ["GitHub", "VS Code", "Postman", "MongoDB Atlas", "Firebase", "Eclipse", "Jupyter Notebook"],
+    },
+  ];
 
   
   const expLogos = [
@@ -229,7 +262,7 @@ const navLinks = [
   const socialImgs = [
     {
       name: "insta",
-      url: "https://www.instagram.com/potato44444444444/",
+      url: "https://www.instagram.com/__shubham0004/",
       imgPath: "/images/insta.png",
     },
     {
@@ -250,6 +283,7 @@ const navLinks = [
     logoIconsList,
     counterItems,
     expCards,
+    techSkills,
     expLogos,
     testimonials,
     socialImgs,

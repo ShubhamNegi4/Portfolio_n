@@ -22,9 +22,9 @@ const NavBar = () => {
             <a className = "logo" href="#hero">Shubham Negi</a>
             <nav className = "desktop">
                 <ul>
-                    {navLinks.map(({link, name}) =>(
+                    {navLinks.map(({link, name, external}) =>(
                         <li key = {name} className = "group">
-                            <a href={link}>
+                            <a href={link} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                                 <span>{name}</span>
                                 <span className = "underline"></span>
                             </a>

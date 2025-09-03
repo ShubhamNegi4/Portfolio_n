@@ -15,6 +15,79 @@ body {
   font-family: "Mona Sans", sans-serif;
 }
 
+/* Subtle grid background overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.25;
+}
+
+/* Soft vignette toward the center */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 70%);
+}
+
+/* Animated colorful side auras (left/right panels) */
+#root::before,
+#root::after {
+  content: "";
+  position: fixed;
+  top: 10vh;
+  bottom: 10vh;
+  width: 32vw;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(60px) saturate(140%);
+  opacity: 0.45;
+  animation: floatY 14s ease-in-out infinite;
+}
+
+#root::before {
+  left: -8vw;
+  background: radial-gradient( circle at 30% 50%, rgba(99,102,241,0.65), rgba(99,102,241,0) 60% ),
+              radial-gradient( circle at 70% 30%, rgba(236,72,153,0.4), rgba(236,72,153,0) 60% );
+}
+
+#root::after {
+  right: -8vw;
+  background: radial-gradient( circle at 70% 50%, rgba(56,189,248,0.55), rgba(56,189,248,0) 60% ),
+              radial-gradient( circle at 30% 70%, rgba(192,132,252,0.35), rgba(192,132,252,0) 60% );
+  animation-delay: -7s;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Center all top-level sections similar to a page container */
+#root > * {
+  @apply max-w-6xl mx-auto px-5 md:px-10;
+}
+
+/* Reusable glass card for hero/about sections */
+@layer components {
+  .glass-card {
+    @apply relative z-10 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.35)];
+  }
+
+  .glass-card-hover:hover {
+    @apply border-white/20 shadow-[0_0_60px_rgba(124,58,237,0.25)];
+  }
+}
+
 section {
   width: 100dvw;
 }
@@ -81,7 +154,7 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+    @apply relative z-10 xl:mt-20 mt-16 flex xl:items-center items-start justify-center md:py-16 py-10;
   }
 
   .hero-text {
@@ -100,6 +173,11 @@ section {
 
   .hero-3d-layout {
     @apply xl:w-[60%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-10 right-0;
+  }
+  
+  /* 3D model container when used inside hero glass card */
+  .hero-3d-in-card {
+    @apply w-full h-[40vh] md:h-[50vh] xl:h-[55vh] relative;
   }
   
 
@@ -158,19 +236,33 @@ section {
   .app-showcase {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
+    /* Center inner container and add generous side spacing */
+    .w-full {
+      @apply max-w-6xl mx-auto px-4 md:px-10;
+    }
+
     .showcaselayout {
       @apply flex xl:flex-row flex-col gap-10 justify-between;
     }
 
     .first-project-wrapper {
-      @apply h-full flex flex-col justify-between xl:w-[60%];
+      @apply h-full flex flex-col justify-between xl:w-1/2;
 
       .image-wrapper {
-        @apply xl:h-[60vh] md:h-[50vh] h-96 relative;
+        @apply xl:h-80 lg:h-72 md:h-64 h-64 relative overflow-hidden rounded-xl transition-transform duration-300 ease-out;
 
         img {
-          @apply w-full h-full object-cover rounded-xl absolute inset-0;
+          @apply w-full h-full object-cover rounded-xl absolute inset-0 transition-transform duration-300 ease-out;
         }
+      }
+
+      /* Hover: slight lift and image zoom */
+      .image-wrapper:hover {
+        @apply -translate-y-1;
+      }
+
+      .image-wrapper:hover img {
+        @apply scale-105;
       }
 
       .text-content {
@@ -187,14 +279,23 @@ section {
     }
 
     .project-list-wrapper {
-      @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+      @apply flex flex-col gap-10 xl:w-1/2;
 
       .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        @apply xl:h-80 lg:h-72 md:h-64 h-64 relative rounded-xl overflow-hidden transition-transform duration-300 ease-out;
       }
 
       img {
-        @apply w-full h-full object-contain rounded-xl;
+        @apply w-full h-full object-cover rounded-xl absolute inset-0 transition-transform duration-300 ease-out;
+      }
+
+      /* Hover: slight lift and image zoom */
+      .image-wrapper:hover {
+        @apply -translate-y-1;
+      }
+
+      .image-wrapper:hover img {
+        @apply scale-105;
       }
 
       h2 {
